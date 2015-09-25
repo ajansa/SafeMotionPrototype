@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
     <Content Include="index.html" />
     <Content Include="content\bootstrap-theme.css" />
     <Content Include="content\bootstrap-theme.min.css" />
@@ -86,6 +87,7 @@
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\jquery-2.1.4.js" />
     <Content Include="scripts\jquery-2.1.4.min.js" />
+    <Content Include="scripts\winstore-jscompact.js" />
     <Content Include="test\serviceuser.testdata.js" />
     <Content Include="images\alarm_red.jpg" />
     <Content Include="images\battery_red.png" />
