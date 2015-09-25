@@ -1,0 +1,232 @@
+﻿<!doctype html>
+<html ng-app="app" lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="images/logo_icon.png" />
+
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <title>SafeMotion</title>
+
+    <!-- external libraries -->
+    <link rel="stylesheet" href="content/bootstrap.min.css" type="text/css" />
+    <script src="scripts/jquery-2.1.4.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+
+    <!-- app libraries -->
+    <link rel="stylesheet" href="app/app.css" type="text/css" />
+    <script src="app/infrastructure.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/serviceuser.controller.js"></script>
+    <script src="app/app.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+
+<body>
+    <!-- top navbar -->
+    <div class="navbar navbar-fixed-top">
+        <div id="divNavbarLeft" class="text-left">
+            <div id="divNavbarHamburger" data-toggle="modal" data-target="#sidebarModal"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
+            <img id="imgNavbarLogo" src="images/SafeMotion_Logo.png" />
+        </div>
+
+        <div id="divNavbarRight" class="text-right"> 
+            <div id="divUserName">
+                <span id="spanUserNameText" data-toggle="collapse" data-target="#divUserMenu" class="hidden-xs">User Name</span>
+                <span id="spanUserNameIcon" class="glyphicon glyphicon-user" data-toggle="collapse" data-target="#divUserMenu"></span>
+            </div>
+        </div>
+    </div>
+        
+
+    <!-- User Settings -->
+    <div id="divUserMenu" class="collapse">
+        <ul id="ulUserMenu" class="nav">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span><span class="userMenuText">Profile</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-cog"></span><span class="userMenuText">User settings</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span><span class="userMenuText">Logout</span></a></li>
+        </ul>
+    </div>
+
+
+    <!-- Modal sidebar -->
+    <div id="sidebarModal" class="modal">
+
+        <div id="sidebar" role="navigation">
+            <div id="divSidebarHeader">
+                <div id="divSidebarHamburger" data-dismiss="modal"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
+                <img id="imgSidebarLogo" src="images/SafeMotion_Logo.png" />
+            </div>
+            <ul id="ulSidebarContent" class="nav">
+                <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span><span class="sidebarText">Home</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span><span class="sidebarText">Alerts</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span><span class="sidebarText">Relatives</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-calendar"></span><span class="sidebarText">Calendar</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-envelope"></span><span class="sidebarText">Messages</span></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-cog"></span><span class="sidebarText">Settings</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- main area -->
+    <div id="divContent">
+        <!-- Service User Details -->
+        <div id="divServiceUser1" class="contentContainer" ng-controller="ServiceUser as vm">
+            <div id="serviceUser1Anchor" class="anchor"></div>
+
+
+            <!-- ************ -->
+            <!-- detail row 1 -->
+            <!-- ************ -->
+            <div class="row">
+                <!-- Profile -->
+                <div id="divProfile" class="col-sm-4 detailItem">
+                    <div id="divProfileHeader" class="detailItemHeader">{{vm.firstName}} {{vm.lastName}}</div>
+                    <img id="imgProfilePicture" ng-src="{{vm.profilePicture}}" />
+                </div>
+
+                <!-- Status -->
+                <div id="divStatus" class="col-sm-4 detailItem">
+                    <div id="divStatusHeader" class="detailItemHeader">Status</div>
+
+                    <div class="detailItemBorder">
+                        <img class="imgDetailItem" src="images/whitebackground.png" />
+                        <div class="divDetailItemText">
+
+                            <!-- battery level -->
+                            <span class="glyphicon glyphicon-flash" style="color: yellow"></span>
+                            <span class="">{{vm.batteryLevel}}% battery </span>
+                            <br />
+
+                            <!-- signal -->
+                            <span class="glyphicon glyphicon-signal" style="color: yellow"></span>
+                            <span class="">Last signal {{vm.lastSignalMin}} min ago </span>
+                            <br />
+                            <!-- alarm -->
+                            <span class="glyphicon glyphicon-exclamation-sign" style="color: red"></span>
+                            <span class="">{{vm.activeAlarms}} active alarm </span>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Location -->
+                <div id="divLocation" class="col-sm-4 detailItem">
+                    <div id="divMapHeader" class="detailItemHeader">Location</div>
+                    <div id="divMap"></div>
+                </div>
+
+            </div>
+
+
+            <!-- ************ -->
+            <!-- detail row 2 -->
+            <!-- ************ -->
+            <div class="row">
+
+                <!-- Alert -->
+                <div id="divAlert" class="col-sm-4 detailItem">
+                    <div id="divAlertHeader" class="detailItemHeader">Alert history</div>
+
+                    <div class="detailItemBorder">
+                        <img class="imgDetailItem" src="images/whitebackground.png" />
+                        <div class="divDetailItemText">
+                            <!-- TODO: data from View Model -->
+                            <div class="detailItemDate">08/09/2015 12:30</div><div class="detailText">Carer2 accepted alert</div>
+                            <div class="detailItemDate">08/09/2015 12:28</div><div class="detailText">Carer2 contacted</div>
+                            <div class="detailItemDate">08/09/2015 12:26</div><div class="detailText">Carer1 declined alert</div>
+                            <div class="detailItemDate">08/09/2015 12:26</div><div class="detailText">Carer1 contacted</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Message History -->
+                <div id="divMessage" class="col-sm-4 detailItem">
+                    <div class="detailItemHeader">Messages</div>
+
+                    <div class="detailItemBorder">
+                        <img class="imgDetailItem" src="images/whitebackground.png" />
+                        <div class="divDetailItemText">
+                            <!-- TODO: data from View Model -->
+                            <div class="detailItemDate">08/09/2015 09:00</div><div class="detailText">Carer2: How do you feel today?</div>
+                            <div class="detailItemDate">07/09/2015 13:28</div><div class="detailText">Carer1: Did your neighbour visit?</div>
+                            <div class="detailItemDate">05/09/2015 15:01</div><div class="detailText">Carer2: how is your knee pain today?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reminder -->
+                <div id="divReminder" class="col-sm-4 detailItem">
+                    <div class="detailItemHeader">Reminder history</div>
+
+                    <div class="detailItemBorder">
+                        <img class="imgDetailItem" src="images/whitebackground.png" />
+                        <div class="divDetailItemText">
+                            <!-- TODO: data from View Model -->
+                            <div class="detailItemDate">08/09/2015 21:30</div><div class="detailText">Time to go to bed.</div>
+                            <div class="detailItemDate">08/09/2015 14:00</div><div class="detailText">Did you take your medicine?</div>
+                            <div class="detailItemDate">08/09/2015 10:30</div><div class="detailText">Did you drink some water?</div>
+                            <div class="detailItemDate">08/09/2015 08:00</div><div class="detailText">Are you awake?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ************ -->
+        <!-- list row -->
+        <!-- ************ -->
+        <div class="listItem">
+            <div class="row">
+                <div class="listItemName col-xs-6">
+                    MyFirstName2 MyLastName2
+                </div>
+                <div class="listItemStatus col-xs-6 text-right">
+                    <!-- battery level -->
+                    <img class="listItemIcon" src="images/battery_red.png" />
+                    <div class="listItemText hidden-xs">29% battery </div>
+                    <!-- signal -->
+                    <img class="listItemIcon" src="images/signal_green.jpg" />
+                    <div class="listItemText hidden-xs">Online </div>
+                    <!-- alarm -->
+                    <img class="listItemIcon" src="images/alarm_green.jpg" />
+                    <div class="listItemText hidden-xs">No active alarm </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ************ -->
+        <!-- list row -->
+        <!-- ************ -->
+        <div class="listItem">
+            <div class="row">
+                <div class="listItemName col-xs-6">
+                    MyFirstName3 MyLastName3
+                </div>
+                <div class="listItemStatus col-xs-6 text-right">
+                    <!-- battery level -->
+                    <img class="listItemIcon" src="images/battery_yellow.png" />
+                    <div class="listItemText hidden-xs">49% battery </div>
+                    <!-- signal -->
+                    <img class="listItemIcon" src="images/signal_green.jpg" />
+                    <div class="listItemText hidden-xs">Online </div>
+                    <!-- alarm -->
+                    <img class="listItemIcon" src="images/alarm_green.jpg" />
+                    <div class="listItemText hidden-xs">No active alarm </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

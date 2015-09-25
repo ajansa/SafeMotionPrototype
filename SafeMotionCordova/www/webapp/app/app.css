@@ -1,0 +1,58 @@
+body { font-size: 1.3vw; font-family: Raleway, Calibri, Verdana; background-color: #f2f2f2;}
+
+.navbar { width: 100%; height: 55px; font-size: 20px; background-color: white !important; border-bottom: 1px solid lightgrey;  padding-top: 10px; padding-left: 5%; padding-right: 6%; margin-bottom: 0.1%; }
+
+#divNavbarLeft { float: left; width: 70%}
+#divNavbarHamburger {float: left; margin-right: 10px; cursor: pointer; }
+#imgNavbarLogo { height: 30px; }
+#divNavbar { background-color: white; }
+#spanUserNameText { margin-right: 10px; cursor: pointer; }
+#spanUserNameIcon { cursor: pointer; } 
+
+#divUserMenu { font-size: 20px; position: absolute; right: 0; top: 0; padding-top: 50px; padding-right: 4%; background-color: white; border: 1px solid lightgrey; z-index: 999; }
+#divUserMenu a { color : black; text-decoration: none; cursor: pointer; }
+.userMenuText { margin-left: 10px;}
+
+#sidebar { height: 100%; width: 25%; font-size: 20px; padding-top: 10px; padding-left: 5%;  background-color: white; border-right: 1px solid lightgrey; }
+#sidebar a { color : black; text-decoration: none; cursor: pointer; }
+#divSidebarHamburger {float: left; margin-right: 10px; cursor: pointer; }
+#imgSidebarLogo { height: 30px; }
+.sidebarText { margin-left: 10px;}
+#ulSidebarContent {margin-top: 10px;}
+#divContent { margin-top: 60px; margin-bottom: 50px; margin-right: 4%; margin-left: 4%; }
+
+.contentContainer { background-color: white; border: 1px solid lightgrey; padding: 10px; margin-bottom: 10px; }
+
+.listItem { background-color: white; border: 1px solid lightgrey; padding-left: 10px; margin-bottom: 5px;  }
+.listItemName { font-weight: bold; }
+.listItemIcon { float: left; height: 20px; margin: 5px;}
+.listItemText { float: left; padding-top: 3px}
+
+.detailItemHeader { background-color: lightgrey; border: 1px solid lightgrey;  width: 100%; padding-left: 10px;  }
+.imgDetailItem {width: 100%}
+.detailItemBorder { position: relative; border: 1px solid lightgrey; border-top: 0px; padding: 10px; }
+.divDetailItemText { position: absolute; top: 0; left: 0; margin-left: 10px; width: 100%}
+.detailStatusIcon { clear: left; float: left; height: 20px; margin: 5px;}
+.detailItemDate { font-weight: bold; margin-right: 10px; float: left;}
+
+#imgProfilePicture { width: 100%; }
+#divMap { background-color: #CCC; margin-bottom: 3%; width: 200px; height: 200px;}
+
+
+@media (max-width: 768px) {
+    body { font-size: 3vw; }
+    .contentContainer { border: 0px; padding: 0px; }
+    #sidebar { width: 75%; }
+    #divContent { margin-right: 0px; margin-left: 0px; }
+} 
+
+
+
+/* side bars examples 
+
+    https://github.com/callmenick/Slide-Push-Menus
+
+    http://www.bootply.com/88026
+
+    http://seegatesite.com/create-simple-cool-sidebar-menu-with-bootstrap-3/ 
+*/
