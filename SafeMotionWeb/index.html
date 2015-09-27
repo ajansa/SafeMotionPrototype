@@ -45,7 +45,7 @@
     </div>
         
 
-    <!-- User Settings -->
+    <!-- User Menu -->
     <div id="divUserMenu" class="collapse">
         <ul id="ulUserMenu" class="nav">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span><span class="userMenuText">Profile</span></a></li>
@@ -55,7 +55,7 @@
     </div>
 
 
-    <!-- Modal sidebar -->
+    <!-- Side Bar -->
     <div id="sidebarModal" class="modal">
 
         <div id="sidebar" role="navigation">
@@ -74,9 +74,10 @@
         </div>
     </div>
 
-    <!-- main area -->
+    <!-- Content -->
     <div id="divContent">
-        <!-- Service User Details -->
+
+        <!-- Detail View -->
         <div id="divServiceUser1" class="contentContainer" ng-controller="ServiceUser as vm">
             <div id="serviceUser1Anchor" class="anchor"></div>
 
@@ -96,21 +97,36 @@
                     <div id="divStatusHeader" class="detailItemHeader">Status</div>
 
                     <div class="detailItemBorder">
-                        <img class="imgDetailItem" src="images/whitebackground.png" />
-                        <div class="divDetailItemText">
+                        <img class="imgStatusItem" src="images/whitebackground.png" />
+                        <div class="divSatusItemText">
 
                             <!-- battery level -->
-                            <span class="glyphicon glyphicon-flash" style="color: yellow"></span>
-                            <span class="">{{vm.batteryLevel}}% battery </span>
-                            <br />
+                            <div class="col-xs-6 text-center">
+                                <span class="detailStatusIcon glyphicon glyphicon-flash" style="color: yellow"></span>
+                                <br/>
+                                <span class="">{{vm.batteryLevel}}% battery </span>
+                            </div>
 
                             <!-- signal -->
-                            <span class="glyphicon glyphicon-signal" style="color: yellow"></span>
-                            <span class="">Last signal {{vm.lastSignalMin}} min ago </span>
-                            <br />
+                            <div class="col-xs-6 text-center">
+                                <span class="detailStatusIcon glyphicon glyphicon-signal" style="color: yellow"></span>
+                                <br />
+                                <span class="">Signal {{vm.lastSignalMin}} min ago </span>
+                            </div>
+
                             <!-- alarm -->
-                            <span class="glyphicon glyphicon-exclamation-sign" style="color: red"></span>
-                            <span class="">{{vm.activeAlarms}} active alarm </span>
+                            <div class="col-xs-6 text-center">
+                                <span class="detailStatusIcon glyphicon glyphicon-exclamation-sign" style="color: red"></span>
+                                <br />
+                                <span class="">{{vm.activeAlarms}} active alarm </span>
+                            </div>
+
+                            <!-- last movement -->
+                            <div class="col-xs-6 text-center">
+                                <span class="detailStatusIcon glyphicon glyphicon-time" style="color: green"></span>
+                                <br />
+                                <span class="">Movement 15 min ago </span>
+                            </div>
 
                         </div>
                     </div>
@@ -143,6 +159,10 @@
                             <div class="detailItemDate">08/09/2015 12:28</div><div class="detailText">Carer2 contacted</div>
                             <div class="detailItemDate">08/09/2015 12:26</div><div class="detailText">Carer1 declined alert</div>
                             <div class="detailItemDate">08/09/2015 12:26</div><div class="detailText">Carer1 contacted</div>
+                            <div class="detailItemDate">07/09/2015 12:30</div><div class="detailText">Carer2 accepted alert</div>
+                            <div class="detailItemDate">07/09/2015 12:28</div><div class="detailText">Carer2 contacted</div>
+                            <div class="detailItemDate">07/09/2015 12:26</div><div class="detailText">Carer1 declined alert</div>
+                            <div class="detailItemDate">07/09/2015 12:26</div><div class="detailText">Carer1 contacted</div>
                         </div>
                     </div>
                 </div>
@@ -156,9 +176,16 @@
                         <img class="imgDetailItem" src="images/whitebackground.png" />
                         <div class="divDetailItemText">
                             <!-- TODO: data from View Model -->
-                            <div class="detailItemDate">08/09/2015 09:00</div><div class="detailText">Carer2: How do you feel today?</div>
-                            <div class="detailItemDate">07/09/2015 13:28</div><div class="detailText">Carer1: Did your neighbour visit?</div>
-                            <div class="detailItemDate">05/09/2015 15:01</div><div class="detailText">Carer2: how is your knee pain today?</div>
+                            <div class="detailItemDate">08/09/2015 09:00</div><div class="messageSender text-right">from Carer2</div> 
+                            <div class="messageText">How do you feel today?</div><div class="messageAnswer text-right">Very good</div>
+                            <div class="detailItemDate">07/09/2015 13:28</div><div class="messageSender text-right">from Carer1</div>
+                            <div class="messageText">Did your neighbour visit?</div><div class="messageAnswer text-right">No</div>
+                            <div class="detailItemDate">05/09/2015 15:01</div><div class="messageSender text-right">from Carer2</div>
+                            <div class="messageText">How is your knee pain today?</div><div class="messageAnswer text-right">OK</div>
+                            <div class="detailItemDate">04/09/2015 09:00</div><div class="messageSender text-right">from Carer2</div>
+                            <div class="messageText">How do you feel today?</div><div class="messageAnswer text-right">Good</div>
+                            <div class="detailItemDate">02/09/2015 13:28</div><div class="messageSender text-right">from Carer1</div>
+                            <div class="messageText">Did your neighbour visit?</div><div class="messageAnswer text-right">Yes</div>
                         </div>
                     </div>
                 </div>
@@ -175,6 +202,9 @@
                             <div class="detailItemDate">08/09/2015 14:00</div><div class="detailText">Did you take your medicine?</div>
                             <div class="detailItemDate">08/09/2015 10:30</div><div class="detailText">Did you drink some water?</div>
                             <div class="detailItemDate">08/09/2015 08:00</div><div class="detailText">Are you awake?</div>
+                            <div class="detailItemDate">07/09/2015 21:30</div><div class="detailText">Time to go to bed.</div>
+                            <div class="detailItemDate">07/09/2015 14:00</div><div class="detailText">Did you take your medicine?</div>
+                            <div class="detailItemDate">07/09/2015 10:30</div><div class="detailText">Did you drink some water?</div>
                         </div>
                     </div>
                 </div>

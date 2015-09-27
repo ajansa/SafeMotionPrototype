@@ -1,54 +1,68 @@
 body { font-size: 1.3vw; font-family: Raleway, Calibri, Verdana; background-color: #f2f2f2;}
 
-.navbar { width: 100%; height: 55px; font-size: 20px; background-color: white !important; border-bottom: 1px solid lightgrey;  padding-top: 10px; padding-left: 5%; padding-right: 6%; margin-bottom: 0.1%; }
+/* Navigation Bar */
+.navbar { width: 100%; height: 55px; font-size: 20px; padding-top: 10px; background-color: white !important; border-bottom: 1px solid lightgrey;   }
 
 #divNavbarLeft { float: left; width: 70%}
-#divNavbarHamburger {float: left; margin-right: 10px; cursor: pointer; }
-#imgNavbarLogo { height: 30px; }
+#divNavbarHamburger {float: left; margin-top: 4px; margin-left: 10px;  margin-right: 10px; cursor: pointer; }
+#imgNavbarLogo { height: 20px; }
 #divNavbar { background-color: white; }
 #spanUserNameText { margin-right: 10px; cursor: pointer; }
-#spanUserNameIcon { cursor: pointer; } 
+#spanUserNameIcon { cursor: pointer; margin-right: 10px;  } 
 
-#divUserMenu { font-size: 20px; position: absolute; right: 0; top: 0; padding-top: 50px; padding-right: 4%; background-color: white; border: 1px solid lightgrey; z-index: 999; }
+/* User Menu */
+#divUserMenu { font-size: 20px; position: absolute; right: 0; top: 0; padding-top: 50px; background-color: white; border: 1px solid lightgrey; z-index: 999; }
 #divUserMenu a { color : black; text-decoration: none; cursor: pointer; }
 .userMenuText { margin-left: 10px;}
 
-#sidebar { height: 100%; width: 25%; font-size: 20px; padding-top: 10px; padding-left: 5%;  background-color: white; border-right: 1px solid lightgrey; }
+/* Side Bar */
+#sidebar { height: 100%; width: 250px; font-size: 20px; padding-top: 10px; background-color: white; border-right: 1px solid lightgrey; }
 #sidebar a { color : black; text-decoration: none; cursor: pointer; }
-#divSidebarHamburger {float: left; margin-right: 10px; cursor: pointer; font-size: 20px;  }
-#imgSidebarLogo { height: 30px; }
+#divSidebarHamburger {float: left; margin-top: 4px; margin-left: 10px;  margin-right: 10px; cursor: pointer; }
+#imgSidebarLogo { height: 20px; }
 .sidebarText { margin-left: 10px;}
 #ulSidebarContent {margin-top: 10px;}
 #divContent { margin-top: 60px; margin-bottom: 50px; margin-right: 4%; margin-left: 4%; }
 
+/* Content */
 .contentContainer { background-color: white; border: 1px solid lightgrey; padding: 10px; margin-bottom: 10px; }
 
+
+/* List View */
 .listItem { background-color: white; border: 1px solid lightgrey; padding-left: 10px; margin-bottom: 5px;  }
 .listItemName { font-weight: bold; }
 .listItemIcon { float: left; height: 20px; margin: 5px;}
 .listItemText { float: left; padding-top: 3px}
 
-.detailItemHeader { background-color: lightgrey; border: 1px solid lightgrey;  width: 100%; padding-left: 10px;  }
+
+/* Detail View */
+.detailItemHeader { background-color: lightgrey; border: 1px solid lightgrey;  width: 100%; font-size: 1.5vw; padding: 3px; padding-left: 10px; font-weight: bold; }
 .imgDetailItem {width: 100%}
+.imgStatusItem {width: 100%}
 .detailItemBorder { position: relative; border: 1px solid lightgrey; border-top: 0px; padding: 10px; }
-.divDetailItemText { position: absolute; top: 0; left: 0; margin-left: 10px; width: 100%}
-.detailStatusIcon { clear: left; float: left; height: 20px; margin: 5px;}
-.detailItemDate { font-weight: bold; margin-right: 10px; float: left;}
+.divDetailItemText { position: absolute; top: 0; left: 0; width: 100%}
+.divSatusItemText { position: absolute; top: 0; left: 0; width: 100%}
+.detailItemDate { float: left; font-weight: bold; padding-left: 10px; margin-right: 10px; }
+.detailStatusIcon { font-size: 4vw; margin: 10%;}
+.messageText { float: left; padding-left: 20px; }
+.messageSender { font-weight: bold; padding-right: 10px; }
+.messageAnswer { padding-right: 10px; }
+
 
 #imgProfilePicture { width: 100%; }
 #divMap { background-color: #CCC; margin-bottom: 3%; width: 200px; height: 200px;}
 
 
-@media (max-width: 1000px) {
-    #sidebar { width: 40%; }
-}
-
+/* Mobile Devices */
 
 @media (max-width: 768px) {
-    body { font-size: 3vw; }
+    body { font-size: 20px; }
+    .detailItemHeader { font-size: 20px; }
     .contentContainer { border: 0px; padding: 0px; }
-    #sidebar { width: 75%; }
-    #divContent { margin-right: 0px; margin-left: 0px; }
+    #divContent { margin-top: 55px; margin-right: 0px; margin-left: 0px; }
+    .detailStatusIcon { font-size: 13vw; }
+    .imgDetailItem { display: none; }
+    .divDetailItemText { position:  inherit; width: 100%}
 } 
 
 
