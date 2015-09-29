@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('ServiceUser', serviceuser);
+        .controller('serviceUserController', ServiceUserController);
 
-    function serviceuser() {
+    function ServiceUserController() {
 
         var vm = this;
         vm.firstName = "MyFirstName";

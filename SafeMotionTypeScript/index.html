@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html ng-app="app" lang='en' >
+<html ng-app="app" lang='en' data-framework="typescript">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,18 +13,11 @@
 
     <title>SafeMotion</title>
 
-    <!-- external libraries -->
-    <link rel="stylesheet" href="content/bootstrap.min.css" type="text/css" />
-    <script src="scripts/jquery-2.1.4.min.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-    <script src="scripts/angular.min.js"></script>
+    <link rel="stylesheet" href="Content/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="Content/app.css" type="text/css" />
 
-    <!-- app libraries -->
-    <link rel="stylesheet" href="content/app.css" type="text/css" />
-
-    <script src="app/Utils.js"></script>
-    <script src="app/Application.js"></script>
-    <script src="app/ServiceuserController.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="app.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js"></script>
 </head>
@@ -78,7 +71,7 @@
     <div id="divContent">
 
         <!-- Detail View -->
-        <div id="divServiceUser1" class="contentContainer" ng-controller="serviceUserController as vm">
+        <div id="divServiceUser1" class="contentContainer" ng-controller="serviceUserController">
             <div id="serviceUser1Anchor" class="anchor"></div>
 
 
@@ -88,8 +81,8 @@
             <div class="row">
                 <!-- Profile -->
                 <div id="divProfile" class="col-sm-4 detailItem">
-                    <div id="divProfileHeader" class="detailItemHeader">{{vm.firstName}} {{vm.lastName}}</div>
-                    <img id="imgProfilePicture" ng-src="{{vm.profilePicture}}" />
+                    <div id="divProfileHeader" class="detailItemHeader">{{serviceUser.firstName}} {{serviceUser.lastName}}</div>
+                    <img id="imgProfilePicture" ng-src="{{serviceUser.profilePicture}}" />
                 </div>
 
                 <!-- Status -->
@@ -104,21 +97,21 @@
                             <div class="col-xs-6 text-center">
                                 <span class="detailStatusIcon glyphicon glyphicon-flash" style="color: yellow"></span>
                                 <br/>
-                                <span class="">{{vm.batteryLevel}}% battery </span>
+                                <span class="">{{serviceUser.batteryLevel}}% battery </span>
                             </div>
 
                             <!-- signal -->
                             <div class="col-xs-6 text-center">
                                 <span class="detailStatusIcon glyphicon glyphicon-signal" style="color: yellow"></span>
                                 <br />
-                                <span class="">Signal {{vm.lastSignalMin}} min ago </span>
+                                <span class="">Signal {{serviceUser.lastSignalMin}} min ago </span>
                             </div>
 
                             <!-- alarm -->
                             <div class="col-xs-6 text-center">
                                 <span class="detailStatusIcon glyphicon glyphicon-exclamation-sign" style="color: red"></span>
                                 <br />
-                                <span class="">{{vm.activeAlarms}} active alarm </span>
+                                <span class="">{{serviceUser.activeAlarms}} active alarm </span>
                             </div>
 
                             <!-- last movement -->
@@ -256,6 +249,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>
