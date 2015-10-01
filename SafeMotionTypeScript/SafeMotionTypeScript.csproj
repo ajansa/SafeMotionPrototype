@@ -117,20 +117,21 @@
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\lodash.js" />
+    <Content Include="Scripts\lodash.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Application\Controllers\DetailController.ts" />
     <TypeScriptCompile Include="Application\Controllers\ListController.ts" />
     <TypeScriptCompile Include="Application\Application.ts" />
-    <TypeScriptCompile Include="Application\Configuration.ts" />
-    <TypeScriptCompile Include="Application\Controllers\ServiceUserController.ts" />
+    <TypeScriptCompile Include="Application\Controllers\DetailController.ts" />
     <TypeScriptCompile Include="Application\Interfaces\IServiceUserScope.ts" />
     <TypeScriptCompile Include="Application\Models\ServiceUser.ts" />
-    <TypeScriptCompile Include="Application\Services\Storage.ts" />
+    <TypeScriptCompile Include="Application\Services\GoogleMap.ts" />
+    <TypeScriptCompile Include="Application\Services\MockupStorage.ts" />
     <TypeScriptCompile Include="Application\Services\Utils.ts" />
     <TypeScriptCompile Include="Application\_app.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
@@ -140,7 +141,9 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-route.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\bootstrap\bootstrap.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="typings\google.maps.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

@@ -2,13 +2,12 @@ body { font-size: 1.3vw; font-family: Raleway, Calibri, Verdana; background-colo
 
 /* Navigation Bar */
 .navbar { width: 100%; height: 55px; font-size: 20px; padding-top: 10px; background-color: white !important; border-bottom: 1px solid lightgrey;   }
-
+.navLogo { height: 20px;  }
 #divNavbarLeft { float: left; width: 70%}
 #divNavbarHamburger {float: left; margin-top: 4px; margin-left: 10px;  margin-right: 10px; cursor: pointer; }
-#imgNavbarLogo { height: 20px; }
 #divNavbar { background-color: white; }
 #spanUserNameText { margin-right: 10px; cursor: pointer; }
-#spanUserNameIcon { cursor: pointer; margin-right: 10px;  } 
+#spanUserNameIcon { cursor: pointer; margin-right: 20px;  } 
 
 /* User Menu */
 #divUserMenu { font-size: 20px; position: absolute; right: 0; top: 0; padding-top: 50px; background-color: white; border: 1px solid lightgrey; z-index: 999; }
@@ -16,10 +15,9 @@ body { font-size: 1.3vw; font-family: Raleway, Calibri, Verdana; background-colo
 .userMenuText { margin-left: 10px;}
 
 /* Side Bar */
-#sidebar { height: 100%; width: 250px; font-size: 20px; padding-top: 10px; background-color: white; border-right: 1px solid lightgrey; }
+#sidebar { height: 100%; width: 300px; font-size: 20px; padding-top: 10px; background-color: white; border-right: 1px solid lightgrey; }
 #sidebar a { color : black; text-decoration: none; cursor: pointer; }
 #divSidebarHamburger {float: left; margin-top: 4px; margin-left: 10px;  margin-right: 10px; cursor: pointer; }
-#imgSidebarLogo { height: 20px; }
 .sidebarText { margin-left: 10px;}
 #ulSidebarContent {margin-top: 10px;}
 #divContent { margin-top: 60px; margin-bottom: 50px; margin-right: 4%; margin-left: 4%; }
@@ -27,13 +25,11 @@ body { font-size: 1.3vw; font-family: Raleway, Calibri, Verdana; background-colo
 /* Content */
 .contentContainer { background-color: white; border: 1px solid lightgrey; padding: 10px; margin-bottom: 10px; }
 
-
 /* List View */
 .listItem { background-color: white; border: 1px solid lightgrey; padding-left: 10px; margin-bottom: 5px;  }
 .listItemName { font-weight: bold; }
 .listItemIcon { float: left; height: 20px; margin: 5px;}
 .listItemText { float: left; padding-top: 3px}
-
 
 /* Detail View */
 .detailItemHeader { background-color: lightgrey; border: 1px solid lightgrey;  width: 100%; font-size: 1.5vw; padding: 3px; padding-left: 10px; font-weight: bold; }
@@ -47,14 +43,11 @@ body { font-size: 1.3vw; font-family: Raleway, Calibri, Verdana; background-colo
 .messageText { float: left; padding-left: 20px; }
 .messageSender { font-weight: bold; padding-right: 10px; }
 .messageAnswer { padding-right: 10px; }
-
-
 #imgProfilePicture { width: 100%; }
-#divMap { background-color: #CCC; margin-bottom: 3%; width: 200px; height: 200px;}
+#divMap { background-color: #CCC; margin-bottom: 3%; width: 100%; height: 100%;}
 
 
 /* Mobile Devices */
-
 @media (max-width: 768px) {
     body { font-size: 20px; }
     .detailItemHeader { font-size: 20px; }

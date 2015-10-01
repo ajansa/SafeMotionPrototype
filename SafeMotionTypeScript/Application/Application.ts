@@ -21,14 +21,31 @@ https://blorkfish.wordpress.com/2014/02/03/setting-up-typescript-and-angularjs-i
  */
 module safemotion {
     'use strict';
-    var safeMotionApp = angular.module('app', [])
-        .service('storage', Storage)
-        .controller('serviceUserController', ServiceUserController);
 
-    // white list images
-    safeMotionApp.config(function ($compileProvider) {
-        var imgSrcSanitizationWhitelist = /^\s*(https?|ftp|file):|data:image\//;
-        $compileProvider.imgSrcSanitizationWhitelist(imgSrcSanitizationWhitelist);
-    });
-
+    var safemotionApp = angular.module('app', ['ngRoute'])
+        .service('storage', MockupStorage)
+        .controller('DetailController', DetailController)
+        .controller('ListController', ListController)
+        // white list images
+        .config(function ($compileProvider) {
+            var imgSrcSanitizationWhitelist = /^\s*(https?|ftp|file):|data:image\//;
+            $compileProvider.imgSrcSanitizationWhitelist(imgSrcSanitizationWhitelist);
+        })
+        // routes
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl: '/Application/Views/List.html',
+                    controller: 'ListController'
+                })
+                .when('/list', {
+                    templateUrl: '/Application/Views/List.html',
+                    controller: 'ListController'
+                })
+                .when('/detail:detailId', {
+                    templateUrl: '/Application/Views/Detail.html',
+                    controller: 'DetailController'
+                })
+                .otherwise({ redirectTo: '/list' });
+        });
 }

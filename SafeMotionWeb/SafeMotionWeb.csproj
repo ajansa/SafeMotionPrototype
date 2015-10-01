@@ -71,6 +71,7 @@
     <Content Include="app\Application.js" />
     <Content Include="app\ServiceUserController.js" />
     <Content Include="app\Utils.js" />
+    <Content Include="fonts\open-sans\Apache License.txt" />
     <Content Include="index.html" />
     <Content Include="content\bootstrap-theme.css" />
     <Content Include="content\bootstrap-theme.min.css" />
@@ -87,6 +88,16 @@
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\angular.min.js.map" />
+    <Content Include="fonts\open-sans\OpenSans-Bold.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-BoldItalic.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-ExtraBold.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-Italic.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-Light.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-LightItalic.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-Regular.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-Semibold.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-SemiboldItalic.ttf" />
     <None Include="scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="images\alarm_green.jpg" />
     <Content Include="images\serviceuser.png" />
