@@ -18,15 +18,18 @@ module safemotion {
         // See http://docs.angularjs.org/guide/di
         public static $inject = [
             '$scope',
+            '$routeParams', 
             'storage'
         ];
 
         // dependencies are injected via AngularJS $injector
         // controller's name is registered in Application.ts and specified from ng-controller attribute in index.html
-        constructor(private $scope: IServiceUserScope, private storage: MockupStorage)
+        constructor(private $scope: IServiceUserScope, $routeParams, private storage: MockupStorage)
         {
             $scope.serviceUserList = storage.list();
-            $scope.serviceUser = storage.list()[1];
+
+            var id: number = +$routeParams.detailId.replace(":", "");
+            $scope.serviceUser = storage.list()[id];
             var currentServiceUser = $scope.serviceUser;
 
             // initialise map after profile picture is loaded

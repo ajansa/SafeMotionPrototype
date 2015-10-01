@@ -22,6 +22,7 @@ https://blorkfish.wordpress.com/2014/02/03/setting-up-typescript-and-angularjs-i
 module safemotion {
     'use strict';
 
+    // app config
     var safemotionApp = angular.module('app', ['ngRoute'])
         .service('storage', MockupStorage)
         .controller('DetailController', DetailController)

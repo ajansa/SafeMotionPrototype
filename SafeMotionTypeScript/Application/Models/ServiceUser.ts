@@ -4,6 +4,7 @@ module safemotion {
 
     export class ServiceUser {
         constructor(
+            public id: number,
             public firstName: string,
             public lastName: string,
             public profilePicture: string,
