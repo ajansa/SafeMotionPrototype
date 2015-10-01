@@ -21,6 +21,28 @@ var safemotion;
 var safemotion;
 (function (safemotion) {
     'use strict';
+    var LoginController = (function () {
+        function LoginController() {
+            var test = ""; // 
+            $(window).load(function () { $('#divLoginModal').modal('show'); });
+        }
+        LoginController.prototype.loginWithFacebook = function () {
+            alert("with facebook");
+        };
+        LoginController.prototype.loginWithGoogle = function () {
+            alert("with google");
+        };
+        LoginController.prototype.loginWithEmail = function (user, password) {
+            alert("with email");
+        };
+        return LoginController;
+    })();
+    safemotion.LoginController = LoginController;
+})(safemotion || (safemotion = {}));
+/// <reference path='../_app.ts' />
+var safemotion;
+(function (safemotion) {
+    'use strict';
     // global variable to be able to reset map centre after resize of browser window
     var serviceUserMap;
     /**
@@ -118,8 +140,9 @@ var safemotion;
     // app config
     var safemotionApp = angular.module('app', ['ngRoute'])
         .service('storage', safemotion.MockupStorage)
-        .controller('DetailController', safemotion.DetailController)
-        .controller('ListController', safemotion.ListController)
+        .controller('loginController', safemotion.LoginController)
+        .controller('detailController', safemotion.DetailController)
+        .controller('listController', safemotion.ListController)
         .config(function ($compileProvider) {
         var imgSrcSanitizationWhitelist = /^\s*(https?|ftp|file):|data:image\//;
         $compileProvider.imgSrcSanitizationWhitelist(imgSrcSanitizationWhitelist);
@@ -127,18 +150,18 @@ var safemotion;
         .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-            templateUrl: '/Application/Views/List.html',
-            controller: 'ListController'
+            templateUrl: '/Application/Views/Login.html',
+            controller: 'loginController'
         })
             .when('/list', {
             templateUrl: '/Application/Views/List.html',
-            controller: 'ListController'
+            controller: 'listController'
         })
             .when('/detail:detailId', {
             templateUrl: '/Application/Views/Detail.html',
-            controller: 'DetailController'
+            controller: 'detailController'
         })
-            .otherwise({ redirectTo: '/list' });
+            .otherwise({ redirectTo: '/' });
     });
 })(safemotion || (safemotion = {}));
 /// <reference path='../scripts/typings/jquery/jquery.d.ts' />
@@ -146,6 +169,7 @@ var safemotion;
 /// <reference path='../typings/google.maps.d.ts' />
 /// <reference path='./Models/ServiceUser.ts' />
 /// <reference path="./Services/MockupStorage.ts" />
+/// <reference path='./Controllers/LoginController.ts' />
 /// <reference path='./Controllers/DetailController.ts' />
 /// <reference path='./Controllers/ListController.ts' />
 /// <reference path='./Interfaces/IServiceUserScope.ts' />

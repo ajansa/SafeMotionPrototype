@@ -1,0 +1,33 @@
+﻿<!-- List View -->
+<div id="divLogin" ng-controller="loginController">
+
+    <!-- Modal -->
+    <div id="divLoginModal" class="modal login" role="dialog">
+        <div class="modal-dialog login">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="divFacebookLoginBtn" class="loginButton">Log in with Facebook</div>
+                    <div id="divGoogleLoginBtn" class="loginButton">Log in with Google</div>
+                    <div class="center">or</div>
+                    <input type="text" name="loginemail" placeholder="Email-Address" class="loginField" />
+                    <br/>
+                    <input type="password" name="loginpassword" placeholder="Password" class="loginField" />
+                    <br/>
+                    <div id="divRememberMe"><input id="checkboxRemember" type="checkbox" />Remember me</div>    
+                    <div id="divForgotPwd">Forgot password?</div>
+                    <div id="divEmailLoginBtn" class="loginButton">Log In</div>
+                    <hr/>
+                    Need an acount? <span id="spanRegister">Register</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divLoginImg">
+        <img id="imgLoginImgLandscape" src="../../Images/loginBackground.png" />
+        <img id="imgLoginImgPortrait" src="../../Images/loginBackgroundMobile.png" />
+    </div>
+
+</div>

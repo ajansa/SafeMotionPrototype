@@ -25,8 +25,9 @@ module safemotion {
     // app config
     var safemotionApp = angular.module('app', ['ngRoute'])
         .service('storage', MockupStorage)
-        .controller('DetailController', DetailController)
-        .controller('ListController', ListController)
+        .controller('loginController', LoginController)
+        .controller('detailController', DetailController)
+        .controller('listController', ListController)
         // white list images
         .config(function ($compileProvider) {
             var imgSrcSanitizationWhitelist = /^\s*(https?|ftp|file):|data:image\//;
@@ -36,17 +37,17 @@ module safemotion {
         .config(function ($routeProvider) {
             $routeProvider
                 .when('/', {
-                    templateUrl: '/Application/Views/List.html',
-                    controller: 'ListController'
+                    templateUrl: '/Application/Views/Login.html',
+                    controller: 'loginController'
                 })
                 .when('/list', {
                     templateUrl: '/Application/Views/List.html',
-                    controller: 'ListController'
+                    controller: 'listController'
                 })
                 .when('/detail:detailId', {
                     templateUrl: '/Application/Views/Detail.html',
-                    controller: 'DetailController'
+                    controller: 'detailController'
                 })
-                .otherwise({ redirectTo: '/list' });
+                .otherwise({ redirectTo: '/' });
         });
 }

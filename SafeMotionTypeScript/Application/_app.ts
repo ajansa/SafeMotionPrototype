@@ -3,6 +3,7 @@
 /// <reference path='../typings/google.maps.d.ts' />
 /// <reference path='./Models/ServiceUser.ts' />
 /// <reference path="./Services/MockupStorage.ts" />
+/// <reference path='./Controllers/LoginController.ts' />
 /// <reference path='./Controllers/DetailController.ts' />
 /// <reference path='./Controllers/ListController.ts' />
 /// <reference path='./Interfaces/IServiceUserScope.ts' />

@@ -68,6 +68,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Application\Views\Login.html" />
+    <Content Include="Images\LoginBackground.png" />
+    <Content Include="Images\loginBackgroundMobile.png" />
+    <Content Include="Images\logo_icon.png" />
+    <Content Include="Images\safeMotionLogo.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Web.Debug.config">
@@ -91,7 +96,6 @@
     <Content Include="Images\battery_red.png" />
     <Content Include="Images\battery_yellow.png" />
     <Content Include="Images\carecam.jpg" />
-    <Content Include="Images\SafeMotion_Logo.png" />
     <Content Include="Images\serviceuser.png" />
     <Content Include="Images\settings.png" />
     <Content Include="Images\signal_green.jpg" />
@@ -125,6 +129,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Application\Controllers\LoginController.ts" />
     <TypeScriptCompile Include="Application\Controllers\ListController.ts" />
     <TypeScriptCompile Include="Application\Application.ts" />
     <TypeScriptCompile Include="Application\Controllers\DetailController.ts" />
