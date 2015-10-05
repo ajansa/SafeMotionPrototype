@@ -1,9 +1,10 @@
-/// <reference path='../_all.ts' />
-var serviceuser;
-(function (serviceuser) {
+/// <reference path='../_app.ts' />
+var safemotion;
+(function (safemotion) {
     'use strict';
     var ServiceUser = (function () {
-        function ServiceUser(firstName, lastName, profilePicture, batteryLevel, lastSignalMin, activeAlarms, latitude, longitude) {
+        function ServiceUser(id, firstName, lastName, profilePicture, batteryLevel, lastSignalMin, activeAlarms, latitude, longitude) {
+            this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.profilePicture = profilePicture;
@@ -15,5 +16,6 @@ var serviceuser;
         }
         return ServiceUser;
     })();
-    serviceuser.ServiceUser = ServiceUser;
-})(serviceuser || (serviceuser = {}));
+    safemotion.ServiceUser = ServiceUser;
+})(safemotion || (safemotion = {}));
+//# sourceMappingURL=ServiceUser.js.map

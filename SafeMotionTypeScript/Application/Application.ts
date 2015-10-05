@@ -37,15 +37,15 @@ module safemotion {
         .config(function ($routeProvider) {
             $routeProvider
                 .when('/', {
-                    templateUrl: '/Application/Views/Login.html',
+                    templateUrl: './Application/Views/Login.html',
                     controller: 'loginController'
                 })
                 .when('/list', {
-                    templateUrl: '/Application/Views/List.html',
+                    templateUrl: './Application/Views/List.html',
                     controller: 'listController'
                 })
                 .when('/detail:detailId', {
-                    templateUrl: '/Application/Views/Detail.html',
+                    templateUrl: './Application/Views/Detail.html',
                     controller: 'detailController'
                 })
                 .otherwise({ redirectTo: '/' });

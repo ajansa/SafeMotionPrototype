@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeMotionWeb", "SafeMotionWeb\SafeMotionWeb.csproj", "{395E87F6-BC7F-4EFF-96AC-A2D94BEAC9BE}"
 EndProject
-Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "SafeMotionCordovaWeb", "SafeMotionCordova\SafeMotionCordovaWeb.jsproj", "{4DDDD8D6-57C6-44C1-9E4E-E6DF64BD2AB5}"
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "SafeMotionCordova", "SafeMotionCordova\SafeMotionCordova.jsproj", "{4DDDD8D6-57C6-44C1-9E4E-E6DF64BD2AB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeMotionTypeScript", "SafeMotionTypeScript\SafeMotionTypeScript.csproj", "{FF30A55A-3879-43D0-8686-C71851EBD9C4}"
 EndProject

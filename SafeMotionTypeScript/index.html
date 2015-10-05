@@ -13,16 +13,27 @@
 
     <title>SafeMotion</title>
 
-    <link rel="stylesheet" href="Content/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="Content/app.css" type="text/css" />
+    <link rel="stylesheet" href="./Content/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="./Content/app.css" type="text/css" />
 
+    <!-- external libraries -->
     <script src="./Scripts/jquery-2.1.4.min.js"></script>
     <script src="./Scripts/bootstrap.min.js"></script>
     <script src="./Scripts/angular.js"></script>
     <script src="./Scripts/angular-route.js"></script>
-    <script src="app.js"></script>
-
     <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <!-- All app scripts -->
+    <script src="./Application/Models/ServiceUser.js"></script>
+    <script src="./Application/Services/MockupStorage.js"></script>
+    <script src="./Application/Services/GoogleMap.js"></script>
+    <script src="./Application/Services/Utils.js"></script>
+    <script src="./Application/Interfaces/IServiceUserScope.js"></script>
+    <script src="./Application/Controllers/LoginController.js"></script>
+    <script src="./Application/Controllers/DetailController.js"></script>
+    <script src="./Application/Controllers/ListController.js"></script>
+    <script src="./Application/Application.js"></script>
+
 </head>
 
 <body>
@@ -45,9 +56,9 @@
     <!-- User Menu -->
     <div id="divUserMenu" class="collapse">
         <ul id="ulUserMenu" class="nav">
-            <li><a href="/#/list" data-dismiss="collapse"><span class="glyphicon glyphicon-user"></span><span class="userMenuText">Profile</span></a></li>
-            <li><a href="/#/list" data-dismiss="collapse"><span class="glyphicon glyphicon-cog"></span><span class="userMenuText">User settings</span></a></li>
-            <li><a href="/" data-dismiss="collapse"><span class="glyphicon glyphicon-log-out"></span><span class="userMenuText">Logout</span></a></li>
+            <li><a href="./#/list" data-dismiss="collapse"><span class="glyphicon glyphicon-user"></span><span class="userMenuText">Profile</span></a></li>
+            <li><a href="./#/list" data-dismiss="collapse"><span class="glyphicon glyphicon-cog"></span><span class="userMenuText">User settings</span></a></li>
+            <li><a href="./#" data-dismiss="collapse"><span class="glyphicon glyphicon-log-out"></span><span class="userMenuText">Logout</span></a></li>
         </ul>
     </div>
 
@@ -61,12 +72,12 @@
                 <img class="navLogo" src="images/safeMotionLogo.png" />
             </div>
             <ul id="ulSidebarContent" class="nav">
-                <li><a href="/#/list" data-dismiss="modal"><span class="glyphicon glyphicon-home"></span><span class="sidebarText">Home</span></a></li>
-                <li><a href="/#/list" data-dismiss="modal"><span class="glyphicon glyphicon-exclamation-sign"></span><span class="sidebarText">Alerts</span></a></li>
-                <li><a href="/#/list" data-dismiss="modal"><span class="glyphicon glyphicon-user"></span><span class="sidebarText">Relatives</span></a></li>
-                <li><a href="/#/list" data-dismiss="modal"><span class="glyphicon glyphicon-calendar"></span><span class="sidebarText">Calendar</span></a></li>
-                <li><a href="/#/list" data-dismiss="modal"><span class="glyphicon glyphicon-envelope"></span><span class="sidebarText">Messages</span></a></li>
-                <li><a href="/#/list" data-dismiss="modal"><span class="glyphicon glyphicon-cog"></span><span class="sidebarText">Settings</span></a></li>
+                <li><a href="./#/list" data-dismiss="modal"><span class="glyphicon glyphicon-home"></span><span class="sidebarText">Home</span></a></li>
+                <li><a href="./#/list" data-dismiss="modal"><span class="glyphicon glyphicon-exclamation-sign"></span><span class="sidebarText">Alerts</span></a></li>
+                <li><a href="./#/list" data-dismiss="modal"><span class="glyphicon glyphicon-user"></span><span class="sidebarText">Relatives</span></a></li>
+                <li><a href="./#/list" data-dismiss="modal"><span class="glyphicon glyphicon-calendar"></span><span class="sidebarText">Calendar</span></a></li>
+                <li><a href="./#/list" data-dismiss="modal"><span class="glyphicon glyphicon-envelope"></span><span class="sidebarText">Messages</span></a></li>
+                <li><a href="./#/list" data-dismiss="modal"><span class="glyphicon glyphicon-cog"></span><span class="sidebarText">Settings</span></a></li>
             </ul>
         </div>
     </div>

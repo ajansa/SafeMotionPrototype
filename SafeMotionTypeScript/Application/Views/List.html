@@ -9,17 +9,17 @@
 
         <div class="row">
             <div class="listItemName col-xs-6">
-                <a href="/#/detail:{{serviceuser.id}}">{{serviceuser.firstName}} {{serviceuser.lastName}}</a>
+                <a href="./#/detail:{{serviceuser.id}}">{{serviceuser.firstName}} {{serviceuser.lastName}}</a>
             </div>
             <div class="listItemStatus col-xs-6 text-right">
                 <!-- battery level -->
-                <img class="listItemIcon" src="images/battery_red.png" />
+                <img class="listItemIcon" src="./images/battery_red.png" />
                 <div class="listItemText hidden-xs">{{serviceuser.batteryLevel}}% battery </div>
                 <!-- signal -->
-                <img class="listItemIcon" src="images/signal_green.jpg" />
+                <img class="listItemIcon" src="./images/signal_green.jpg" />
                 <div class="listItemText hidden-xs">Online </div>
                 <!-- alarm -->
-                <img class="listItemIcon" src="images/alarm_green.jpg" />
+                <img class="listItemIcon" src="./images/alarm_green.jpg" />
                 <div class="listItemText hidden-xs">{{serviceuser.activeAlarms}} active alarm </div>
             </div>
         </div>
